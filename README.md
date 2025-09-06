@@ -1,31 +1,149 @@
-Build a Modern Computer from First Principles: From Nand to Tetris I and II 
-About
-This is the first part of a two-part course in which students learn how to construct a modern +general-purpose computer from the ground up. The first part starts with Boolean algebra and the universal NAND gate and from this build the other elementary logic gates, a Central Processing Unit, a memory system, and a hardware platform. This is done using a simple, but effective, Hardware Description Language and a hardware simulator.
+# Nand2Tetris Projects
 
-Different versions of this course have been taught at Harvard, Stanford, Chicago and 100+ universities and high schools all over the world. Both parts are currently available online for self-study through coursera.org, and all course material and information can be found at nand2tetris.org.
+> *"From Nand to Tetris: Building a Modern Computer From First Principles"*
 
-These are my solutions to the course's six projects. I hope that it will help someone else taking the course, but please do not copy solutions - being stuck is part of learning and there is much to learn by overcoming problems and finding solutions on your own. Note that there are often several ways to solve a problem, and I am open to suggestions/questions!
+Welcome to the **Nand2Tetris** implementation repository by [Linux56ax](https://github.com/Linux56ax). This repo contains completed projects from the renowned Nand2Tetris course, which guides you through building a modern computer system from the ground up — starting with NAND gates and ending with a working Tetris game!
 
-Subham Majumdar, 2025 👩‍💻
+---
 
-Projects
-Project 1: Elementary Logic Gates
-This project includes building and simulating 15 elementary logic gates, starting from only a given NAND gate. Provided by the instructors are .tst-files and .cmp-files for testing the chips using the hardware simulator.
+## 📚 About Nand2Tetris
 
-Complete chip-set
-Project 2: ALU
-The goal of the second project is to build "the centerpiece of the CPU", by which we mean the Arithmetic Logic Unit, or ALU. This chip performs many different arithmetic and logical operations, we provide our ALU with abilities to add, subtract numbers, and perform basic logic on 16-bit inputs. Other functionality, such as multiplication, division and floating point arithmetic is not implemented in the hardware, but will instead be added later at a higher level.
+[Nand2Tetris](https://www.nand2tetris.org/) is a hands-on educational course created by Noam Nisan and Shimon Schocken. It walks you through 12 projects that progressively build a complete computer system:
 
-Complete chip-set
-Project 3: RAM
-In the third project the RAM unit of the Hack computer is built. We now move on from the previous combinational logic, to the sequential logic of clocked chips. The entire memory chip-set is built in steps, starting from a primitive data flip-flop gate all the way up to n-bit registers and a complete set of RAM chips.
+- Hardware: Logic gates → CPU → Memory → Computer architecture
+- Software: Assembler → VM → Compiler → OS → High-level application (Tetris!)
 
-Complete chip-set
-Project 4: Machine Language Introduction
-The purpose of this project is to become familiar with the Hack machine language, called assembly, by writing a few simple programs using the assembly language, translate them into binary code and execute them using the given Assembler and the CPU emulator. For this purpose, we assume the computer and the machine language is already built.
+This repository contains the author’s completed work for each project in the course.
 
-Programs
-Project 5: Hack Computer Architecture
-In this project all the previously built parts come together to finally form the complete architecture of the 16-bit Hack hardware platform. The Memory chip is built with the complete address space of the Hack computer, containing a RAM unit with 16K registers, a Screen with 8K registers and a Keyboard with 1 register. Then the CPU is built, containing an instruction memory and a data memory from which it can fetch, operate on, and modify data. Lastly, the topmost chip is built by assembling the CPU, the instruction memory ROM32K and the data memory Memory.
+---
 
-Complete chip-set
+## 📁 Repository Structure
+
+All projects are located under the [`projects/`](https://github.com/Linux56ax/Nanad2Tetris/tree/main/projects) directory:
+
+```
+projects/
+├── 01/    # Boolean Logic & Basic Gates
+├── 02/    # Boolean Arithmetic & ALU
+├── 03/    # Sequential Logic & Memory
+├── 04/    # Machine Language & CPU
+├── 05/    # Computer Architecture
+├── 06/    # Assembler
+├── 07/    # Virtual Machine I (Stack Arithmetic)
+├── 08/    # Virtual Machine II (Program Control)
+├── 09/    # High-Level Language & Compiler I
+├── 10/    # Compiler II (Syntax Analysis)
+├── 11/    # Compiler III (Code Generation)
+└── 12/    # Operating System & Tetris
+```
+
+Each folder contains:
+- HDL (Hardware Description Language) files for hardware projects
+- Source code (Jack, VM, ASM) for software projects
+- Test scripts and comparison outputs
+- Documentation or notes (if available)
+
+---
+
+## 🛠️ Tools Used
+
+- **Hardware Simulator** — for testing HDL chip designs
+- **Assembler** — converts assembly (.asm) to machine code (.hack)
+- **CPU Emulator** — runs compiled machine code
+- **VM Translator** — translates VM code to assembly
+- **Jack Compiler** — compiles Jack (OOP language) to VM
+- **Text Editor / IDE** — for writing HDL, ASM, VM, and Jack code
+
+> All tools are available for free from the [Nand2Tetris Software Suite](https://www.nand2tetris.org/software).
+
+---
+
+## ✅ How to Use This Repo
+
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/Linux56ax/Nanad2Tetris.git
+   cd Nanad2Tetris/projects
+   ```
+
+2. **Navigate to a project folder** (e.g., `cd 06` for the Assembler project).
+
+3. **Load the `.hdl`, `.asm`, `.vm`, or `.jack` files** into the appropriate Nand2Tetris tool.
+
+4. **Run the supplied test scripts** (`.tst`) to verify correctness.
+
+5. **Compare your output** with the provided `.cmp` (compare) files.
+
+---
+
+## 🎓 Learning Outcomes
+
+By completing these projects, you will understand:
+
+✅ How logic gates form the foundation of computation  
+✅ How memory, ALU, and CPU work together  
+✅ How machine language is assembled from human-readable code  
+✅ How a stack-based virtual machine operates  
+✅ How a compiler translates high-level OOP code to low-level instructions  
+✅ How an operating system supports applications like Tetris
+
+---
+
+## 🧑‍💻 About the Author
+
+**Linux56ax** — A passionate learner and builder of systems from the ground up. This repo is a personal milestone in understanding computer architecture and systems programming.
+
+> “If you want to *really* understand how computers work — build one yourself.”
+
+---
+
+## 📜 License
+
+This project is for educational purposes. All code is original work completed as part of the Nand2Tetris curriculum.
+
+The Nand2Tetris course materials are copyrighted by Noam Nisan and Shimon Schocken. Redistribution of original course files (`.tst`, `.cmp`, etc.) must comply with their [course license](https://www.nand2tetris.org/course).
+
+---
+
+## 🙌 Acknowledgements
+
+- Noam Nisan & Shimon Schocken — creators of Nand2Tetris
+- Coursera / The Hebrew University of Jerusalem — for hosting the course
+- The Nand2Tetris community — for support, inspiration, and shared knowledge
+
+---
+
+## 💬 Feedback & Contributions
+
+Found a bug? Have a suggestion? Want to compare solutions?
+
+👉 Open an [Issue](https://github.com/Linux56ax/Nanad2Tetris/issues) or reach out!
+
+*(Note: This repo is a personal educational record — PRs may not be accepted, but discussions are welcome!)*
+
+---
+
+## 🚀 Ready to Build a Computer?
+
+Start from Project 01 — and build your way up to Tetris!
+
+```text
+NAND → Gates → ALU → RAM → CPU → Assembler → VM → Compiler → OS → Tetris
+```
+
+You’ve got this. 💪
+
+---
+
+> “Computer science is no more about computers than astronomy is about telescopes.” — Edsger Dijkstra  
+> But sometimes, you gotta build the telescope to see the stars. 🌌
+
+--- 
+
+🔗 **Course Website**: https://www.nand2tetris.org/  
+🔗 **Author’s GitHub**: https://github.com/Linux56ax  
+📅 Completed: [Add Completion Date if Known]
+
+---
+
+⭐ *If you found this helpful, consider giving the repo a star!* ⭐
