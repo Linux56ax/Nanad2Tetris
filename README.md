@@ -1,2 +1,2 @@
 # Nanad2Tetris
-Building COmputer from Scratch. 
+Building Computer from Scratch. 
