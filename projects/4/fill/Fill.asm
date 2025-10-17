@@ -9,3 +9,91 @@
 // the screen should be cleared.
 
 //// Replace this comment with your code.
+
+
+(START)
+    @KBD
+    D=M
+    @WHITE
+    D;JEQ
+
+
+    @BLACK
+    0;JMP
+
+    (RETBLACK)
+    @START
+    0;JMP
+
+(WHITE)
+    @SCREEN
+    D=A
+
+    @ADDR
+    M=D
+
+    @8192
+    D=A
+
+    @ADDR
+    D=D+M
+
+    @LAST
+    M=D
+
+    (LOOPW)
+        @LAST
+        D=M
+
+        @ADDR
+        D=D-M
+        @START
+        D;JLE
+
+        @ADDR
+        A=M
+        M=0
+
+        @ADDR
+        M=M+1
+        @LOOPW
+        0;JMP
+
+
+
+(BLACK)
+    @SCREEN
+    D=A
+
+    @ADDR
+    M=D
+
+    @8192
+    D=A
+
+    @ADDR
+    D=D+M
+
+    @LAST
+    M=D
+
+    (LOOPB)
+        @LAST
+        D=M
+
+        @ADDR
+        D=D-M
+        @RETBLACK
+        D;JLE
+
+        @ADDR
+        A=M
+        M=-1
+
+        @ADDR
+        M=M+1
+        @LOOPB
+        0;JMP
+
+
+    
